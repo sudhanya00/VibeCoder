@@ -2,6 +2,15 @@
 
 A local workspace for directing coding agents with clear tasks, evidence and useful handoffs. Built for experienced practitioners and people learning the workflow.
 
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Fastify](https://img.shields.io/badge/Fastify-5-000000?logo=fastify&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)
+
+**Stack:** a React + Vite UI served by a local Fastify service on `127.0.0.1`,
+with Zod-validated requests, a paired single-use browser session, and no
+hosted backend or telemetry.
+
 **Early working preview.** Open a folder, inspect foundational project documents, draft a scoped task, record reported outcomes, and prepare a next-session prompt. Your existing coding agent performs investigation and implementation.
 
 **Checkpoint, 2026-10-03:** private draft persistence is present but still being qualified. A known Windows path-identity error can cause temporary-storage fallback. Export important drafts before stopping; see [current status](progress.md) and [persistence handoff](handoffs/VC-002.md). The workflow below describes the earlier verified in-memory baseline.
@@ -20,7 +29,7 @@ npm start
 
 The launcher opens a paired browser session on `127.0.0.1` at an assigned port. Keep the terminal running. Stop with Ctrl+C. If automatic browser opening is unavailable, run `node dist/server/index.js --no-open` and open the displayed single-use link within two minutes. That link grants this local session; do not share it or save terminal output containing it. A locked/expired session requires restarting the launcher.
 
-The npm wrapper on the development machine failed; invoking npm directly worked:
+If the `npm` command wrapper is blocked on your machine, invoke npm through Node directly:
 
 ```powershell
 node 'C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js' ci
